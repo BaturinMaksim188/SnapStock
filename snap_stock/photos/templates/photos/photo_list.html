@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Список фотографий{% endblock %}
+
+{% block content %}
+<h1>Список фотографий</h1>
+<ul>
+    {% for photo in photos %}
+    <li>
+        <a href="{% url 'photos:photo_detail' photo.id %}">{{ photo.title }}</a> - {{ photo.price }} руб.
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
